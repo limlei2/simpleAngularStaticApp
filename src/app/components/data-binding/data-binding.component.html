@@ -1,0 +1,111 @@
+<button class="btn btn-success m-5 col-5" (click)="navigateToHome()">Go To Home</button>
+<button class="btn btn-success m-5 col-5" (click)="showWelcomeMessage()">Welcome</button>
+<h2 class="text-center">
+    Some Simple Angular Ideas
+</h2>
+<div class="row m-5 p-3" style="border:2px solid black;">
+    <h3 class="text-center"> Data Binding</h3>
+    <p>Type Below to Change the firstName Variable</p>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="firstName">
+    </div>
+
+    <div class="col-6">
+        <p>firstName => {{firstName}}</p>
+    </div>
+    
+    <div class="col-6">
+        Property Binding
+        <input type="text" [value]="firstName" name="" id="" readonly>
+        <br>
+    </div>
+</div>
+
+<div class="row p-3 m-5" style="border:2px solid black">
+    <h3 class="text-center">Control Statements and ngModel</h3>
+    <div class="row">
+        <div class="col-3">
+            @if(div1Visible == true) {
+                <div class="bg-success p-3">
+                    Div 1
+                </div>
+            }
+        </div>
+        <div class="col-3">
+            @if(isChecked == true) {
+                <div class="bg-primary p-3">
+                    Checkbox is Checked
+                </div>
+            } @else {
+                <div class="bg-danger p-3">
+                    Checkbox is Unchecked
+                </div>
+            }
+        </div>
+        <div class="col-3">
+            @if(dayName == "mon") {
+                <span>Monday</span>
+            } @else if (dayName == "tue") {
+                <span>Tuesday</span>
+            } @else if (dayName == "wed") {
+                <span>Wednesday</span>
+            } @else if (dayName == "thu") {
+                <span>Thursday</span>
+            } @else if (dayName == "fri") {
+                <span>Friday</span>
+            } @else if (dayName == "sat") {
+                <span>Saturday</span>
+            } @else if (dayName == "sun") {
+                <span>Sunday</span>
+            } @else {
+                <span>Enter Proper Day Name</span>
+            }
+        </div>
+    </div>
+    <div class="row pt-4 m-5">
+        <div class="col-3">
+            <button class="btn btn-success" (click)="hideShowDiv1(true)">Show</button>
+            <button class="btn btn-danger" (click)="hideShowDiv1(false)">Hide</button>
+        </div>
+        <div class="col-3">
+            <input type="checkbox" [(ngModel)]="isChecked"/>
+        </div>
+        <div class="col-3">
+            <input type="text" [(ngModel)]="dayName" maxlength="3" placeholder="Enter First 3 Letters of Day"/>
+        </div>
+    </div>
+</div>
+
+<div class="row p-3 m-5" style="border:2px solid black">
+    <h3 class="text-center">Pipes in Angular</h3>
+    <div class="row">
+        <div class="col-7">
+            courseName => {{courseName}}
+            <br>
+            upperCase => {{courseName | uppercase}}
+        </div>
+        <div class="col-7">
+            courseName => {{courseName}}
+            <br>
+            lowerCase => {{courseName | lowercase}}
+        </div>
+        <div class="col-5">
+            studentObj => {{studentObj}}
+            <br>
+            studentObj => {{studentObj | json}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            currentDate => {{currentDate}}
+            <br>
+            currentDate only => {{currentDate | date}}
+            <br>
+            currentDate only => {{currentDate | date:'dd-MM-yyyy'}}
+            <br>
+            currentDate only => {{currentDate | date:'dd/MMM/yyyy'}}
+            <br>
+            currentDate only => {{currentDate | date:'hh:mm:ss'}}
+        </div>
+    </div>
+</div>
